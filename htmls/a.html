@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G R I P E</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            background-image: url('https://media.discordapp.net/attachments/1129152467469348876/1303547403412181003/Captura_de_pantalla_2024-08-10_004525.png?ex=672c269f&is=672ad51f&hm=438f6f30a49e70621aab5519a1083848a7224a0e9bd30ebf2d10015665058912&=&format=webp&quality=lossless');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 600px;
+            z-index: 1;
+        }
+
+        .profile-card {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border-radius: 15px;
+            padding: 20px;
+            width: 380px;
+            text-align: left;
+            position: relative;
+            top: 20px;
+            left: -100px;
+        }
+
+        .profile-card img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .profile-info {
+            text-align: left;
+        }
+
+        .profile-info h2 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .profile-info p {
+            font-size: 1em;
+            margin: 3px 0;
+            color: #ccc;
+        }
+
+        /* Contenedor de Discord */
+        .discord-container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .discord-profile,
+        .discord-server {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            width: 280px;
+            height: 100px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .discord-profile img,
+        .discord-server img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .discord-info {
+            text-align: left;
+        }
+
+        .discord-info h3 {
+            font-size: 1em;
+            margin: 0;
+        }
+
+        .discord-info p {
+            font-size: 0.8em;
+            color: #ccc;
+            margin: 3px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .online {
+            background-color: #3ba55d; /* Verde para Online */
+        }
+
+        .offline {
+            background-color: #747f8d; /* Gris para Offline */
+        }
+
+        .join-button {
+            background-color: #3ba55d;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Estilos para el contenedor de vistas */
+        .views-container {
+            display: flex;
+            align-items: center;
+            color: #ccc;
+            font-size: 0.8em;
+            margin-top: 10px;
+            justify-content: center;
+            position: absolute;
+            bottom: -130px;
+            left: 30px; /* Mueve todo el contenedor un poco a la derecha */
+        }
+
+        .views-container img {
+            width: 27px;
+            height: 27px;
+            margin-right: 1px; /* Espacio entre el icono del ojo y el número de vistas */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Perfil principal, ajustado a mayor tamaño y posición -->
+        <div class="profile-card">
+            <img src="https://cdn.discordapp.com/attachments/1300306582659137551/1303527066939166800/3430877c80ddb5b7601292c0237d1f6e-transformed.png?ex=672c13af&is=672ac22f&hm=603f3ffe678e120c7218280b7a8ba45bebbc81d6daab1038b9e7f57efef46b1f&" alt="Imagen de perfil">
+            <div class="profile-info">
+                <h2>Gripe</h2>
+                <p>Founder of purex</p>
+            </div>
+
+            <!-- Contenedor de vistas -->
+            <div class="views-container">
+                <img src="file:///C:/Users/walte/Downloads/Captura%20de%20pantalla%202024-11-05%20164225.png" alt="Icono de ojo">
+                <span id="views-count">122</span> 
+            </div>
+        </div>
+
+        <!-- Contenedor de Discord -->
+        <div class="discord-container">
+            <!-- Perfil de usuario de Discord -->
+            <div class="discord-profile">
+                <img src="https://i.pinimg.com/564x/5f/3b/a0/5f3ba01f5066cda5450ad351cf782244.jpg" alt="Avatar de Discord">
+                <div class="discord-info">
+                    <h3>iamgripe</h3>
+                    <p><span class="status-circle online"></span>Online</p>
+                </div>
+            </div>
+
+            <!-- Información del servidor de Discord -->
+            <div class="discord-server">
+                <img src="https://images-ext-1.discordapp.net/external/jP-Kktzc7Ay1in7IqjUwgJ4pnxrrGZDiPqbhn6Y7Nec/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1231855127787208765/a69c5988a79c7415d907ddba21d3a1b2.png?format=webp&quality=lossless&width=507&height=507" alt="Icono del servidor">
+                <div class="discord-info">
+                    <h3>Purex</h3>
+                    <p><span class="status-circle online"></span>464 Online <span class="status-circle offline"></span>1644 Offline</p>
+                    <button class="join-button" onclick="window.location.href='https://discord.gg/purex-1231855127787208765';">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
